@@ -1,1 +1,17 @@
-# MHR_Lua
+--### 替换技检测  
+---@return table
+--slot+数字代表替换技槽编号，一般两个替换技的槽，装上边替换技是0，下边是1  
+--对于四号有三个，前两个也是上0下1，对应typeC，第三个单独占一个TypeE，装了是1没装是0  
+--用类似 `ReplaceSkillCheck().SlotX == 0`这样的来做检测条件之类的
+local function ReplaceSkillCheck()
+    local masterPlayer = toolkits:getMasterPlayerUtils().masterPlayer
+    local SkillTypeCheck = {
+        Slot1 = masterPlayer:get_field("_replaceAttackTypeA"),
+        Slot2 = masterPlayer:get_field("_replaceAttackTypeB"),
+        Slot4_12 = masterPlayer:get_field("_replaceAttackTypeC"),
+        Slot3 = masterPlayer:get_field("_replaceAttackTypeD"),
+        Slot4_3 = masterPlayer:get_field("_replaceAttackTypeE"),
+        Slot5 = masterPlayer:get_field("_replaceAttackTypeF")
+    }
+    return SkillTypeCheck
+end
