@@ -15,3 +15,11 @@ local function ReplaceSkillCheck()
     }
     return SkillTypeCheck
 end
+
+---UI小提示，Credit to Bimmr
+---@param text string
+local function tooltip(text)
+    imgui.same_line()
+    imgui.text("(?)")
+    if imgui.is_item_hovered() then imgui.set_tooltip("  "..text.."  ") end
+end
