@@ -26,8 +26,8 @@ end
 
 --检测是否在怪异任务中
 local function checkInAnomalyQuest()
-    local QuestManager sdk.get_managed_singleton("snow.QuestManager")
-    local isMysteryQuest QuestManager:call("isMysteryQuest")
+    local QuestManager = sdk.get_managed_singleton("snow.QuestManager")
+    local isMysteryQuest = QuestManager:call("isMysteryQuest")
     local isRandomMysteryQuest = QuestManager:call("isRandomMysteryQuest")
     local isInAnomalyQuest = isMysteryQuest or isRandomMysteryQuest
     return isInAnomalyQuest
