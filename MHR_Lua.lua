@@ -23,3 +23,14 @@ local function tooltip(text)
     imgui.text("(?)")
     if imgui.is_item_hovered() then imgui.set_tooltip("  "..text.."  ") end
 end
+
+--检测是否在怪异任务中
+local function checkInAnomalyQuest()
+    local QuestManager sdk.get_managed_singleton("snow.QuestManager")
+    local isMysteryQuest QuestManager:call("isMysteryQuest")
+    local isRandomMysteryQuest = QuestManager:call("isRandomMysteryQuest")
+    local isInAnomalyQuest = isMysteryQuest or isRandomMysteryQuest
+    return isInAnomalyQuest
+end
+
+
