@@ -34,3 +34,9 @@ local function checkInAnomalyQuest()
 end
 
 
+--当前怪异调查任务等级
+local function getAnomalyQuestLv()
+    local QuestManager = sdk.get_managed_singleton("snow.QuestManager")
+    local AnormalyQuestLv = QuestManager:call("getRandomMysteryQuestLv")
+    return AnormalyQuestLv
+end
