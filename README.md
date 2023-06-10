@@ -1,4 +1,3 @@
-* `替换技检测`
-* `UI悬停提示`
-* `怪异任务检测`
-* `怪异任务等级检测`
+* `skilltype check`
+* `tooltip`
+* `anormalyquest check`
